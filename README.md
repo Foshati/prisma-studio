@@ -1,4 +1,4 @@
-# Prisma Studio Playground - PPG Integration
+# Prisma Studio Playground - Neex
 
 A simple and elegant example of how to integrate Prisma Studio with your backend using Prisma Postgres (PPG). This playground demonstrates the complete flow from frontend to backend, showing how Studio communicates with your server to execute database queries.
 
@@ -30,6 +30,56 @@ There are only two relevant files to see, the rest is just boilerplate
 - Open the `server/index.ts` file to see how to handle Studio queries in your backend.
 - Get your Prisma Postgres URL from the [Prisma Console](https://console.prisma.io/) and set it in the `.env` file.
 - Run the playground with `npm run dev` and open Studio the URL from the console output.
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+Make sure you have the following installed:
+- Node.js (v18 or higher)
+- npm or yarn
+- A Prisma Postgres database URL from [Prisma Console](https://console.prisma.io/)
+
+### Installation & Setup
+
+1. **Clone and install dependencies:**
+   ```bash
+   git clone <repository-url>
+   cd prisma-studio-playground
+   npm install
+   ```
+
+2. **Environment Configuration:**
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Edit `.env` and replace `your_prisma_postgres_url_here` with your actual Prisma Postgres URL from the [Prisma Console](https://console.prisma.io/).
+
+3. **Start Development Servers:**
+   ```bash
+   npm run dev
+   ```
+   
+   This command uses `neex` to run both the Hono backend server and React frontend simultaneously:
+   - **Backend (Hono)**: Runs on `http://localhost:4242`
+   - **Frontend (React)**: Runs on `http://localhost:3000`
+   
+   The `neex p 'dev:*'` command automatically starts all scripts that match the `dev:*` pattern in your `package.json`.
+
+4. **Access Prisma Studio:**
+   
+   Once both servers are running, navigate to `http://localhost:3000` in your browser to access the Prisma Studio interface and start exploring your database!
+
+### Development Workflow
+
+The project is structured as a monorepo with two main components:
+
+- **`/server`** - Hono backend that handles Prisma Studio API requests
+- **`/frontend`** - React application that renders the Prisma Studio UI
+
+Both servers run concurrently during development, with hot reloading enabled for seamless development experience.
+
 
 ## 🚀 Frontend Setup
 
@@ -153,26 +203,3 @@ const executor = createStudioBFFClient({
   },
 });
 ```
-
-## 🚦 Running the Playground
-
-### 1. Environment Setup
-
-First, copy the example environment file and add your Prisma Postgres URL:
-
-```bash
-cp .env.example .env
-```
-
-Then edit `.env` and replace `your_prisma_postgres_url_here` with your actual URL from [Prisma Console](https://console.prisma.io/).
-
-### 2. Start the Development Server
-
-```bash
-npm run dev
-# Server runs on http://localhost:4242
-# Frontend runs on http://localhost:3000
-```
-
-**Open Studio**: Navigate to `http://localhost:3000` and explore your database!
-
