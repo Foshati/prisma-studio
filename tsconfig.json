@@ -1,0 +1,45 @@
+{
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist", ".wrangler"],
+  "compilerOptions": {
+    // Base configuration
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "composite": false,
+
+    // React support
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+
+    // Type checking
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+
+    // Bundler mode
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+
+    // Path mapping
+    "baseUrl": ".",
+    "paths": {
+      "frontend/*": ["./frontend/*"],
+      "@/*": ["./frontend/*"]
+    },
+
+    // Vite specific
+    "types": ["vite/client"],
+    "resolveJsonModule": true
+  }
+}

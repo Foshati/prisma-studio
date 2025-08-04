@@ -1,0 +1,38 @@
+{
+  "name": "studio-playground-ppg",
+  "private": true,
+  "version": "0.0.8",
+  "type": "module",
+  "scripts": {
+    "dev": "neex p 'dev:*'",
+    "dev:server": "tsx watch -r dotenv/config server/index.ts",
+    "dev:ui": "vite --mode development --port 3000"
+  },
+  "dependencies": {
+    "@hono/node-server": "1.13.7",
+    "@prisma/studio-core": "0.4.0",
+    "@radix-ui/react-slot": "1.1.2",
+    "class-variance-authority": "0.7.0",
+    "clsx": "2.1.1",
+    "dotenv": "16.5.0",
+    "hono": "4.6.11",
+    "lucide-react": "0.522.0",
+    "neex": "^0.7.20",
+    "react": "18.3.0",
+    "react-dom": "18.3.0",
+    "tailwind-merge": "2.5.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.1.10",
+    "@types/node": "22.0.0",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "@vitejs/plugin-react": "4.6.0",
+    "tailwindcss": "4.1.10",
+    "tsx": "4.19.2",
+    "tw-animate-css": "1.3.4",
+    "typescript": "5.7.2",
+    "vite": "6.3.5",
+    "vite-tsconfig-paths": "5.0.1"
+  }
+}
